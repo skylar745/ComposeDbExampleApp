@@ -1,4 +1,5 @@
 import { createContext, useContext } from "react";
+import * as LitJsSdk from '@lit-protocol/lit-node-client';
 import { CeramicClient } from "@ceramicnetwork/http-client"
 import { ComposeClient } from "@composedb/client";
 
@@ -15,6 +16,14 @@ const composeClient = new ComposeClient({
   // cast our definition as a RuntimeCompositeDefinition
   definition: definition as RuntimeCompositeDefinition,
 });
+
+// Instanciating a lit client will break ceramic 3
+// comment to see the difference
+const litClient = new LitJsSdk.LitNodeClient({
+  alertWhenUnauthorized: true,
+  debug: false,
+  litNetwork: "cayenne",
+})
 
 const CeramicContext = createContext({ceramic: ceramic, composeClient: composeClient});
 
