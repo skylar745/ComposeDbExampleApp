@@ -12,9 +12,7 @@ const Post = ({ author, post }: PostProps) => {
         <div>
           by {author.emoji}&nbsp;
           <Link href={`/user/${author.id}`}>
-            <a>
               {author.name}&nbsp;&nbsp;(@{author.username})
-            </a>
           </Link>
         </div>
         {post.tag && <div>Category: {post.tag}</div>}

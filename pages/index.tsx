@@ -197,7 +197,7 @@ const Home: NextPage = () => {
             <h2 className={styles.accentColor}>
               Please{" "}
               <Link href={`/profile`}>
-                <a style={{ color: "white" }}>create a profile</a>
+                <span style={{ color: "white" }}>create a profile</span>
               </Link>{" "}
               before posting.
             </h2>

@@ -15,22 +15,19 @@ export const Sidebar = ({name, username, id}: SidebarProps) => {
         <div className="logoContainer">
           <Image
             src={ceramicLogo}
+            alt=""
+            fill
+            objectFit='contain'
           />
         </div>
         <Link href = "/">
-          <a>
-            <FaHome /> Home
-          </a>
+          <FaHome /> Home
         </Link>
         <Link href = {`/profile`}>
-          <a>
-            <FaUser /> Profile
-          </a>
+          <FaUser /> Profile
         </Link>
         <Link href = "/explore">
-          <a>
-            <FaHashtag /> Explore
-          </a>
+          <FaHashtag /> Explore
         </Link>
       </div>
       <div className="bottom">
@@ -38,9 +35,7 @@ export const Sidebar = ({name, username, id}: SidebarProps) => {
           <div className="you">
             <b>{name}</b> <br />
             <Link href = {`user/${id}`}>
-              <a>
               @{username}
-              </a>
             </Link>
           </div>
         ) : (
